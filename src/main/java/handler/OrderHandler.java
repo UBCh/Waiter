@@ -16,6 +16,8 @@ public class OrderHandler {
     MenuFabric menuFabric;
 
 
+
+
     public String readConsole() {
 	BufferedReader br = null;
 	String input = null;
@@ -49,7 +51,8 @@ public class OrderHandler {
 	int i = 1;
 	for (MenuPosition position : menuPositions) {
 	    String string = position.getName();
-	    System.out.println(i + " - " + string);
+	    double prise= position.getPrice();
+	    System.out.println(i + " - " + string + " - "+prise+ "  euro");
 	    i++;
 	}
     }

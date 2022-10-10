@@ -1,6 +1,9 @@
 import MenuPositionInterface.menuInterface.MenuFabric;
 import MenuPositionInterface.menuInterface.MenuPosition;
 import handler.OrderHandler;
+import italianCuisine.MenuItalia;
+import mexicanCuisine.MenuMexica;
+import polishCuisine.MenuPolish;
 
 import java.util.ArrayList;
 
@@ -11,6 +14,9 @@ public class AcceptingOrders {
 
 	ArrayList<MenuPosition> menuPositions;
 	MenuFabric menuFabric = null;
+	showMenu("Polish",new MenuPolish());
+	showMenu("Mexican",new MenuMexica());
+	showMenu("Italian",new MenuItalia());
 	menuFabric = selection();
 	System.out.println("choose a dish from the assortment, enter a name");
 	menuPositions = menuFabric.getDishes();
@@ -25,7 +31,7 @@ public class AcceptingOrders {
 	input = orderHandler.readConsole();
 	purchase = orderHandler.getMenuPosition(input, menuPositions);
 	orderHandler.addBasket(purchase);
-	System.out.println("do you want to choose a drink ? do you want to choose a drink ?\n" +
+	System.out.println("do you want to choose a drink ?\n" +
 		"y/n");
 	input = orderHandler.readConsole();
 	switch (input) {
@@ -58,4 +64,12 @@ public class AcceptingOrders {
 	}
 	return menuFabric;
     }
+
+    private static void showMenu(String cantry, MenuFabric menuFabric){
+	System.out.println("                         \n");
+	System.out.println("menu "+cantry+ " cuisine");
+	orderHandler.menuPositionShow(menuFabric.getDishes());
+	orderHandler.menuPositionShow(menuFabric.getDesserts());
+	orderHandler.menuPositionShow(menuFabric.getDrinks());
+	    }
 }
