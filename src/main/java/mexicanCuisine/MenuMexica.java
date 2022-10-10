@@ -40,31 +40,5 @@ public class MenuMexica implements MenuFabric {
     }
 
 
-    @Override
-    public Dish createDish(Dish dish) {
-	switch (dish.getName()) {
-	    case ("enchilada"):
-		return new Pizza();
-	}
-	return null;
-    }
 
-    @Override
-    public Dessert createDessert(Dessert dessert) {
-	switch (dessert.getName()) {
-	    case ("churros in chocolate"):
-		return new Gelato();
-	}
-	return null;
-    }
-
-    @Override
-    public Drink createDrink(Drink drink) {
-
-	switch (drink.getName()) {
-	    case ("sangrita"):
-		return new Chinotto();
-	}
-	return null;
-    }
 }

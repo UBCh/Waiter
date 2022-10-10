@@ -35,31 +35,4 @@ public class MenuItalia implements MenuFabric {
 	return drinks;
     }
 
-    @Override
-    public Dish createDish(Dish dish) {
-	switch (dish.getName()) {
-	    case ("pepperoni"):
-		return new Pizza();
-	}
-	return null;
-    }
-
-    @Override
-    public Dessert createDessert(Dessert dessert) {
-	switch (dessert.getName()) {
-	    case ("gelato with gorgonzola"):
-		return new Gelato();
-	}
-	return null;
-    }
-
-    @Override
-    public Drink createDrink(Drink drink) {
-
-	switch (drink.getName()) {
-	    case ("chinotto"):
-		return new Chinotto();
-	}
-	return null;
-    }
 }

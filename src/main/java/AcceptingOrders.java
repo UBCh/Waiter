@@ -44,8 +44,8 @@ public class AcceptingOrders {
 
     private static MenuFabric selection() {
 	System.out.println("user's choice Polish cuisine -enter 1; Mexican cuisine -enter 2; Italian cuisine - enter 3;");
-	int consol = Integer.parseInt(orderHandler.readConsole());
-	return orderHandler.kitchenSelection(consol);
+	int console= Integer.parseInt(orderHandler.readConsole());
+	return orderHandler.kitchenSelection(console);
     }
 
     private static MenuFabric kitchenChange(MenuFabric menuFabric) {

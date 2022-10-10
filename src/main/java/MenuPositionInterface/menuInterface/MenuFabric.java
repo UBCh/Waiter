@@ -15,9 +15,5 @@ public interface MenuFabric {
 
     ArrayList<MenuPosition> getDrinks();
 
-    Dish createDish(Dish dish);
 
-    Dessert createDessert(Dessert dessert);
-
-    Drink createDrink(Drink drink);
 }

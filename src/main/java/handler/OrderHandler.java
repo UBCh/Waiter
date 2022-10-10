@@ -24,7 +24,8 @@ public class OrderHandler {
 	    input = br.readLine();
 	} catch (Exception e) {
 	    e.printStackTrace();
-	}
+		}
+
 	return input;
     }
 
@@ -38,6 +39,7 @@ public class OrderHandler {
 
 	    case 3:
 		return menuFabric = new MenuItalia();
+
 
 	}
 	return null;
@@ -54,7 +56,6 @@ public class OrderHandler {
 
     public void addBasket(MenuPosition position) {
 	basket.createBasket(position);
-	basket.setAmaunt(position.getPrice());
     }
 
     public void choosingADrink(ArrayList<MenuPosition> menuPositions) {
@@ -67,21 +68,31 @@ public class OrderHandler {
 		"lemon+ice(3)?\n" +
 		"without additives(0)?");
 	int decor = Integer.parseInt(readConsole());
+	AddToDrink(drink,decor);
+    }
+
+    public void AddToDrink(Drink drink, int decor){
 	switch (decor) {
 	    case 0:
 		addBasket(drink);
+		break;
 	    case 1:
 		drink.plusIce();
 		addBasket(drink);
+		break;
 	    case 2:
 		drink.plusLemon();
 		addBasket(drink);
+		break;
 	    case 3:
 		drink.plusLemon();
 		drink.plusIce();
 		addBasket(drink);
 	}
+
+
     }
+
 
     public MenuPosition getMenuPosition(String name, ArrayList<MenuPosition> menuPositions) {
 	for (MenuPosition position : menuPositions) {

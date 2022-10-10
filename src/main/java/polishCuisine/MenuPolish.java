@@ -37,31 +37,5 @@ public class MenuPolish implements MenuFabric {
     }
 
 
-    @Override
-    public Dish createDish(Dish dish) {
-	switch (dish.getName()) {
-	    case ("bigos-staropolski"):
-		return new BigosStaropolski();
-	}
-	return null;
-    }
 
-    @Override
-    public Dessert createDessert(Dessert dessert) {
-	switch (dessert.getName()) {
-	    case ("donuts with powdered sugar"):
-		return new Donuts();
-	}
-	return null;
-    }
-
-    @Override
-    public Drink createDrink(Drink drink) {
-
-	switch (drink.getName()) {
-	    case ("podpiwek"):
-		return new Podpiwek();
-	}
-	return null;
-    }
 }
